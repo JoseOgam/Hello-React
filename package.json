@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "live-server public/",
-    "babel": "babel src/testdata/counter.js --out-file=public/scripts/app.js --presets=env,react --watch"
+    "babel": "babel src/testdata/visibility.js --out-file=public/scripts/app.js --presets=env,react --watch"
   },
   "author": "Joseph",
   "license": "ISC",

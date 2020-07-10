@@ -8,79 +8,29 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Jsx = function (_React$Component) {
-  _inherits(Jsx, _React$Component);
+var ToggleVisible = function (_React$Component) {
+  _inherits(ToggleVisible, _React$Component);
 
-  function Jsx(props) {
-    _classCallCheck(this, Jsx);
+  function ToggleVisible(props) {
+    _classCallCheck(this, ToggleVisible);
 
-    var _this = _possibleConstructorReturn(this, (Jsx.__proto__ || Object.getPrototypeOf(Jsx)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ToggleVisible.__proto__ || Object.getPrototypeOf(ToggleVisible)).call(this, props));
 
-    _this.handleReset = _this.handleReset.bind(_this);
-    _this.handleAddition = _this.handleAddition.bind(_this);
-    _this.handleSubtraction = _this.handleSubtraction.bind(_this);
-    _this.state = {
-      count: 0
-    };
+    _this.ToggleButton = _this.ToggleButton.bind(_this);
+    _this.state = { textDisplay: false };
     return _this;
   }
 
-  _createClass(Jsx, [{
-    key: "handleAddition",
-    value: function handleAddition() {
+  _createClass(ToggleVisible, [{
+    key: "ToggleButton",
+    value: function ToggleButton() {
       this.setState(function (prevState) {
         return {
-          count: prevState.count + 1
+          textDisplay: !prevState.textDisplay
         };
       });
     }
   }, {
-    key: "handleSubtraction",
-    value: function handleSubtraction() {
-      this.setState(function (prevState) {
-        return {
-          count: prevState.count - 1
-        };
-      });
-    }
-  }, {
-    key: "handleReset",
-    value: function handleReset() {
-      this.setState(function () {
-        return {
-          count: 0
-        };
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      return React.createElement(
-        "div",
-        null,
-        React.createElement(Counter, {
-          count: this.state.count,
-          handleReset: this.handleReset,
-          handleAddition: this.handleAddition,
-          handleSubtraction: this.handleSubtraction
-        })
-      );
-    }
-  }]);
-
-  return Jsx;
-}(React.Component);
-
-var Counter = function (_React$Component2) {
-  _inherits(Counter, _React$Component2);
-
-  function Counter() {
-    _classCallCheck(this, Counter);
-
-    return _possibleConstructorReturn(this, (Counter.__proto__ || Object.getPrototypeOf(Counter)).apply(this, arguments));
-  }
-
-  _createClass(Counter, [{
     key: "render",
     value: function render() {
       return React.createElement(
@@ -89,29 +39,23 @@ var Counter = function (_React$Component2) {
         React.createElement(
           "h1",
           null,
-          "Count:",
-          this.props.count
+          "Visibility Toggle"
+        ),
+        React.createElement(
+          "p",
+          null,
+          this.state.textDisplay ? "Hi. here are your details you can now see" : " "
         ),
         React.createElement(
           "button",
-          { onClick: this.props.handleAddition },
-          "+1"
-        ),
-        React.createElement(
-          "button",
-          { onClick: this.props.handleSubtraction },
-          "-1"
-        ),
-        React.createElement(
-          "button",
-          { onClick: this.props.handleReset },
-          "reset"
+          { onClick: this.ToggleButton },
+          "Toggle"
         )
       );
     }
   }]);
 
-  return Counter;
+  return ToggleVisible;
 }(React.Component);
 
-ReactDOM.render(React.createElement(Jsx, null), document.getElementById("app"));
+ReactDOM.render(React.createElement(ToggleVisible, null), document.getElementById("app"));
