@@ -15,12 +15,13 @@ class ToggleVisible extends React.Component {
     return (
       <div>
         <h1>Visibility Toggle</h1>
-        <p>
-          {this.state.textDisplay
-            ? "Hi. here are your details you can now see"
-            : " "}
-        </p>
-        <button onClick={this.toggleButton}>Toggle</button>
+
+        <button onClick={this.toggleButton}>
+          {this.state.textDisplay ? "Hide details" : "Show details "}
+        </button>
+        {this.state.textDisplay && (
+          <p>Hi. here are your details you can now see</p>
+        )}
       </div>
     );
   }

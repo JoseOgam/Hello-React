@@ -42,14 +42,14 @@ var ToggleVisible = function (_React$Component) {
           "Visibility Toggle"
         ),
         React.createElement(
-          "p",
-          null,
-          this.state.textDisplay ? "Hi. here are your details you can now see" : " "
-        ),
-        React.createElement(
           "button",
           { onClick: this.toggleButton },
-          "Toggle"
+          this.state.textDisplay ? "Hide details" : "Show details "
+        ),
+        this.state.textDisplay && React.createElement(
+          "p",
+          null,
+          "Hi. here are your details you can now see"
         )
       );
     }
