@@ -1,11 +1,11 @@
 class ToggleVisible extends React.Component {
   constructor(props) {
     super(props);
-    this.ToggleButton = this.ToggleButton.bind(this);
+    this.toggleButton = this.toggleButton.bind(this);
     this.state = { textDisplay: false };
   }
 
-  ToggleButton() {
+  toggleButton() {
     this.setState((prevState) => ({
       textDisplay: !prevState.textDisplay,
     }));
@@ -20,7 +20,7 @@ class ToggleVisible extends React.Component {
             ? "Hi. here are your details you can now see"
             : " "}
         </p>
-        <button onClick={this.ToggleButton}>Toggle</button>
+        <button onClick={this.toggleButton}>Toggle</button>
       </div>
     );
   }

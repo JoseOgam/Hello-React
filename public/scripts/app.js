@@ -16,14 +16,14 @@ var ToggleVisible = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ToggleVisible.__proto__ || Object.getPrototypeOf(ToggleVisible)).call(this, props));
 
-    _this.ToggleButton = _this.ToggleButton.bind(_this);
+    _this.toggleButton = _this.toggleButton.bind(_this);
     _this.state = { textDisplay: false };
     return _this;
   }
 
   _createClass(ToggleVisible, [{
-    key: "ToggleButton",
-    value: function ToggleButton() {
+    key: "toggleButton",
+    value: function toggleButton() {
       this.setState(function (prevState) {
         return {
           textDisplay: !prevState.textDisplay
@@ -48,7 +48,7 @@ var ToggleVisible = function (_React$Component) {
         ),
         React.createElement(
           "button",
-          { onClick: this.ToggleButton },
+          { onClick: this.toggleButton },
           "Toggle"
         )
       );
